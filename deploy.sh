@@ -46,8 +46,8 @@ if [[ $* != *--no-lastlog* ]]; then
   printf "\nEnter lastlog new host:\n"
   read L_LL_HOST
   if [[ -n "$L_LL_DATE_RAW"  ]]; then
-    L_DATE=$(date --date="${L_LL_DATE_RAW}" "+%Y:%m:%d:%H:%M:%S")
-    printf "\nGreat! New date would be set to ${L_DATE} and host to ${L_LL_HOST}\n"
+    L_LL_DATE=$(date --date="${L_LL_DATE_RAW}" "+%Y:%m:%d:%H:%M:%S")
+    printf "\nGreat! New date would be set to ${L_LL_DATE} and host to ${L_LL_HOST}\n"
     $L_BIN -m $L_USER $L_LL_HOST pts/0 $L_LL_DATE > /dev/null
   fi
 fi
